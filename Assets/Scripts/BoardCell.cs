@@ -44,9 +44,16 @@ public class BoardCell : MonoBehaviour
             return;
         }
 
-
         GameManager.Instance.SelectCell(this);
+        AudioManager.Instance.BoardPlayerSelect();
         IsOccupied = true;
+    }
+
+
+    public void ResetCell()
+    {
+        IsOccupied = false;
+        cellRenderer.material.color = originalColor;
     }
 
 }
